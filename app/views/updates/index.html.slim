@@ -1,5 +1,12 @@
-- if @updates.empty?
-  | No updates yet
-- else
-  - @updates.each do |update|
-    p = update
+.row
+  .col-md-12
+    .tag-cloud
+      == @tags.map { |t| link_to t, tag_path(t.name), class: "btn btn-secondary btn-margin" }.join('')
+.row
+  .col-md-12
+    - if @updates.empty?
+      | No updates yet
+    - else
+      - sort_by_date(@updates).each do |date|
+        - date.each do |update|
+          p = update.title

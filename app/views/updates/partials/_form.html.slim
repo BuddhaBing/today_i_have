@@ -1,4 +1,7 @@
 = form_for @update, remote: true, :html => { :role => "form" } do |f|
+  ul.errors
+    - @update.errors.full_messages.each do |msg|
+      li.alert-danger = msg
   .form-group
     = f.label :title
     br

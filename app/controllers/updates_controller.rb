@@ -2,13 +2,11 @@ class UpdatesController < ApplicationController
   before_action :set_update, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create]
 
-  respond_to do |format|
-    format.html
-    format.js
-  end
+  respond_to :html, :js
 
   def index
-    @updates = Update.all
+    @tags = ActsAsTaggableOn::Tag.all
+    params[:tag] ? @updates = Update.tagged_with(params[:tag]) : @updates = Update.all
   end
 
   def show
@@ -27,7 +25,7 @@ class UpdatesController < ApplicationController
       if @update.save
         redirect_to root_path, notice: 'Update was successfully created.'
       else
-        render :new
+        render :new, notice: @update.errors.full_messages
       end
   end
 

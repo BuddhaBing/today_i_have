@@ -29,7 +29,7 @@ html
             - else
               = link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn"
               = link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn"
-    .container-fluid
+    .container
       - if notice
         .alert.alert-info.alert-dismissable.fadeOut
           a.close  href="#" data-dismiss="alert" aria-label="close" &times;

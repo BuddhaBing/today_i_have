@@ -2,7 +2,8 @@ FactoryGirl.define do
 
   titles = ["Create an app", "Added a modal window", "Worked on CSS", "Improved the UX", "Worked on database relations", "Did some research", "Spoke with the client", "Refactored some code", "Fixed some bugs", "Started learning React"]
   details = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nibh sed massa tincidunt mattis. Vestibulum dapibus eleifend luctus. Sed maximus augue id leo mattis porta. Nulla facilisi. Maecenas ultricies sapien ante, ultrices pellentesque lorem ornare sit amet. Pellentesque porta tellus malesuada libero euismod luctus. Aenean eu volutpat mi. In eu varius felis. Nunc aliquet erat ac viverra iaculis. Praesent eget orci varius, lacinia turpis."
-  users = User.all
+  tags = %w(javascript css ruby react bootstrap rails jquery)
+  tag_list = tags.shuffle.take(2)
 
   sequence :title do |n|
     titles[n-1]
@@ -12,9 +13,18 @@ FactoryGirl.define do
     n
   end
 
+  sequence :details do |n|
+    "Some details #{n}"
+  end
+
+  sequence :tag_list do |n|
+    "A tag #{n}"
+  end
+
   factory :update do
     title
     details
+    tag_list
     user_id
   end
 end
