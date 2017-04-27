@@ -10,6 +10,7 @@
 * [Ruby on Rails](http://rubyonrails.org/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [Slim Template](http://slim-lang.com/)
+* [Bootstrap](https://getbootstrap.com/)
 * [Rspec](http://rspec.info/)
 * [Capybara](https://github.com/teamcapybara/capybara)
 
@@ -40,7 +41,7 @@ a. System should have necessary functionality to determine if a tag is new or no
 
 ## <a name="approach">My approach and challenges</a>
 
-I decided to use the gem [ActsAsTaggableOn](https://github.com/mbleigh/acts-as-taggable-on) for the tagging aspect, as I didn't see much use in spending time on something that was already a solved problem. The downside to using a gem for functionality is that often on first use of the gem, it can take more time figuring out the syntax and built in helper methods that go along with it, than it would to implement the functionality yourself. In the end I still think it saved time, albeit not as much as I had liked, but if I were to use the gem again I am certain that it would save time.
+I decided to use the gem [ActsAsTaggableOn](https://github.com/mbleigh/acts-as-taggable-on) for the tagging aspect, as I didn't see much use in spending time on something that was already a solved problem. The downside to using a gem for functionality is that often on first use of the gem, it can take more time figuring out the syntax and built in helper methods that go along with it, than it would to implement the functionality yourself. In the end I still think it saved time, albeit not as much as I had liked, but if I were to use the gem again in a future project, I am certain that it would save time.
 
 ## <a name="install">Installation</a>
 ```
@@ -55,6 +56,7 @@ $ bin/rake db:create
 ## <a name="usage">Usage</a>
 
 ```
+$ bin/rake db:seed
 $ bin/rails s
 $ open http://localhost:3000
 ```

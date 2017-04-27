@@ -10,5 +10,5 @@ DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
 FactoryGirl.create_list(:user, 10)
-FactoryGirl.create_list(:update, 10)
 FactoryGirl.create(:user, name: "Rob Brentnall", email: "test@test.com", password: "123456", password_confirmation: "123456")
+FactoryGirl.create_list(:update, 10)
