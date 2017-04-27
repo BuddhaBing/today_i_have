@@ -1,0 +1,16 @@
+= form_for @update, remote: true, :html => { :role => "form" } do |f|
+  .form-group
+    = f.label :title
+    br
+    = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :details
+    br
+    = f.text_field :details, class: "form-control"
+  .form-group#tags
+    = f.label :tag_list
+      | Tags
+    br
+    = f.text_field :tag_list, class: "form-control", "data-role" => "tagsinput"
+  .actions
+    = f.submit "Post Update", class: "btn btn-primary"

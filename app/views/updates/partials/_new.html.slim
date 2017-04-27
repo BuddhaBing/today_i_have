@@ -1,0 +1,15 @@
+.modal-dialog role="document"
+  .modal-content
+    .modal-header
+      button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+      h3 New Update
+      - if notice
+        .alert.alert-info.alert-dismissable.fadeOut
+          a.close  href="#" data-dismiss="alert" aria-label="close" &times;
+          = notice
+      - if alert
+        .alert.alert-danger.alert-dismissable.fadeOut
+          a.close href="#" data-dismiss="alert" aria-label="close" &times;
+          = alert
+    .modal-body
+      == render "updates/partials/form"

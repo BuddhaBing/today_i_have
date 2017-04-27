@@ -16,3 +16,9 @@
 //= require bootstrap-tagsinput
 //= require turbolinks
 //= require_tree .
+
+$(document).on('show.bs.modal', function () {
+  setTimeout(function(){
+    $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
+  }, 250);
+});

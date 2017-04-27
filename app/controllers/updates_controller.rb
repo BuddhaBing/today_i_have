@@ -1,5 +1,11 @@
 class UpdatesController < ApplicationController
   before_action :set_update, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create]
+
+  respond_to do |format|
+    format.html
+    format.js
+  end
 
   def index
     @updates = Update.all
@@ -16,9 +22,10 @@ class UpdatesController < ApplicationController
   end
 
   def create
-    @update = Update.new(update_params)
+    user = current_user
+    @update = user.updates.build(update_params)
       if @update.save
-        redirect_to @update, notice: 'Update was successfully created.'
+        redirect_to root_path, notice: 'Update was successfully created.'
       else
         render :new
       end
@@ -31,6 +38,6 @@ class UpdatesController < ApplicationController
     end
 
     def update_params
-      params.require(:update).permit(:title, :details)
+      params.require(:update).permit(:title, :details, :tag_list)
     end
 end
