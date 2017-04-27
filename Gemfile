@@ -31,6 +31,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-tagsinput-rails'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'devise'
+gem 'devise-bootstrap-views'
 gem 'slim'
 gem 'erb2slim', require: false
 gem 'html2slim', require: false
