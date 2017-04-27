@@ -32,7 +32,7 @@ describe Update do
   end
   context '#tags' do
     it "should require some tags" do
-      expect(FactoryGirl.build(:update, title: "A title", details: "some details",
+      expect(FactoryGirl.build(:update, title: "A title", details: "some details", tag_list: "",
                                 user_id: User.first.id)).not_to be_valid
     end
   end

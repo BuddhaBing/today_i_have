@@ -22,7 +22,7 @@ FactoryGirl.define do
   factory :update do
     title
     details DETAILS
-    tags
+    tag_list
     user_id
   end
 
