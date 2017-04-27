@@ -24,11 +24,11 @@ html
         ul.navbar-nav
           li.nav-item
             - if user_signed_in?
-              = link_to "Log out", :destroy_user_session, method: :delete
-              = link_to "New Update", new_update_path, class: "new-update", id: "new-update", :remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window'
+              = link_to "Log out", :destroy_user_session, class: "btn btn-default navbar-btn btn-margin", method: :delete
+              = link_to "New Update", new_update_path, class: "btn btn-default navbar-btn btn-margin", id: "new-update", :remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window'
             - else
-              = link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn"
-              = link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn"
+              = link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn btn-margin"
+              = link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn btn-margin"
     .container
       - if notice
         .alert.alert-info.alert-dismissable.fadeOut
