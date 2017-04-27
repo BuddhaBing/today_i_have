@@ -1,11 +1,11 @@
 FactoryGirl.define do
 
-  TITLES = ["Create an app", "Added a modal window", "Worked on CSS", "Improved the UX", "Worked on database relations", "Did some research", "Spoke with the client", "Refactored some code", "Fixed some bugs", "Started learning React"]
-  DETAILS = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nibh sed massa tincidunt mattis. Vestibulum dapibus eleifend luctus. Sed maximus augue id leo mattis porta. Nulla facilisi. Maecenas ultricies sapien ante, ultrices pellentesque lorem ornare sit amet. Pellentesque porta tellus malesuada libero euismod luctus. Aenean eu volutpat mi. In eu varius felis. Nunc aliquet erat ac viverra iaculis. Praesent eget orci varius, lacinia turpis."
+  titles = ["Create an app", "Added a modal window", "Worked on CSS", "Improved the UX", "Worked on database relations", "Did some research", "Spoke with the client", "Refactored some code", "Fixed some bugs", "Started learning React"]
+  details = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nibh sed massa tincidunt mattis. Vestibulum dapibus eleifend luctus. Sed maximus augue id leo mattis porta. Nulla facilisi. Maecenas ultricies sapien ante, ultrices pellentesque lorem ornare sit amet. Pellentesque porta tellus malesuada libero euismod luctus. Aenean eu volutpat mi. In eu varius felis. Nunc aliquet erat ac viverra iaculis. Praesent eget orci varius, lacinia turpis."
   tags = %w(javascript css ruby react bootstrap rails jquery angular nodejs postgresql)
 
   sequence :title do |n|
-    TITLES[n-1]
+    titles[n-1]
   end
 
   sequence :user_id do |n|
@@ -21,7 +21,7 @@ FactoryGirl.define do
 
   factory :update do
     title
-    details DETAILS
+    details details
     tag_list
     user_id
   end
