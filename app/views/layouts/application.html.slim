@@ -2,9 +2,41 @@ doctype html
 html
   head
     title
-      | today_i_have
+      | Today I Have...
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    meta charset="utf-8"
+    meta content="width=device-width, initial-scale=1 name=viewport, shrink-to-fit=no"
+    meta content="ie=edge" http-equiv="x-ua-compatible"
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = yield
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle.collapsed aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          h1
+            = link_to "Today I Have...", root_path, class: "navbar-brand"
+        ul.navbar-nav
+          li.nav-item
+            - if user_signed_in?
+              = link_to "Log out", :destroy_user_session, method: :delete
+              = link_to "New Update", new_update_path, class: "new-update", id: "new-update", :remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window'
+            - else
+              = link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn"
+              = link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn"
+    .container-fluid
+      - if notice
+        .alert.alert-info.alert-dismissable.fadeOut
+          a.close  href="#" data-dismiss="alert" aria-label="close" &times;
+          = notice
+      - if alert
+        .alert.alert-danger.alert-dismissable.fadeOut
+          a.close href="#" data-dismiss="alert" aria-label="close" &times;
+          = alert
+      #modal-window class="modal fade" role="dialog" aria-labelled-by="modal-window" aria-hidden="true"
+      = yield
