@@ -8,4 +8,8 @@ module UpdatesHelper
     sorted
   end
 
+  def pretty_date(date)
+    date.first.created_at.to_date.strftime("%a %d %B %Y")
+  end
+
 end

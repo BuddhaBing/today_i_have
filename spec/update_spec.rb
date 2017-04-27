@@ -23,8 +23,8 @@ describe Update do
                                 tag_list: "awesomeTag", user_id: User.first.id)
                                 ).not_to be_valid
     end
-    it "title can only be 200 characters or less" do
-      title = "A" * 201
+    it "title can only be 500 characters or less" do
+      title = "A" * 501
       expect(FactoryGirl.build(:update, details: "some details", tag_list: "awesomeTag",
                                 title: title, user_id: User.first.id)
                                 ).not_to be_valid

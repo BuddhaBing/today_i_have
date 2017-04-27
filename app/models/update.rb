@@ -5,7 +5,7 @@ class Update < ApplicationRecord
   validates_presence_of :title, :details, :tag_list
   validates :title, length: { maximum: 30,
     too_long: "%{count} characters is the maximum allowed" }
-  validates :details, length: { maximum: 200,
+  validates :details, length: { maximum: 500,
     too_long: "%{count} characters is the maximum allowed" }
 
   scope :today, -> { where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day) }

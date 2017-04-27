@@ -99,6 +99,8 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.18)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
@@ -277,6 +279,7 @@ DEPENDENCIES
   dotenv-rails
   erb2slim
   factory_girl_rails
+  faker
   font-awesome-rails
   html2slim
   jbuilder (~> 2.5)
